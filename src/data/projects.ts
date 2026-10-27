@@ -74,24 +74,6 @@ export const projectsData: ProjectItem[] = [
     ],
   },
   {
-    id: "aquarise-technologies",
-    title: "Aquarise Technologies",
-    category: "Fish & Prawn Farming Tech",
-    description:
-      "A smart farming platform for aquaculture pond monitoring, automatic aerators, feeding schedules, and daily prawn market prices.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Pond Sensors", "AgriTech"],
-    liveUrl: "https://aquarisetechnologies.vercel.app/",
-    highlight:
-      "Provides farmers with real-time pond water quality insights and daily market prices for Bhimavaram.",
-    featured: true,
-    type: "tech",
-    metrics: [
-      { label: "Industry", value: "Aquaculture" },
-      { label: "Sensors", value: "Water Quality" },
-      { label: "Target", value: "Farm Owners" },
-    ],
-  },
-  {
     id: "grand-occasions-digital",
     title: "Grand Occasions Digital",
     category: "Digital Wedding & Event Invites",

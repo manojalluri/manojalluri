@@ -165,36 +165,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         );
 
-      case "aquarise-technologies":
-        return (
-          <div className="w-full h-full bg-[#181B22] p-4 flex flex-col justify-between">
-            <div className="flex items-center justify-between border-b border-[#2B303C] pb-2">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-                <span className="font-extrabold text-xs text-white">Aquarise Technologies</span>
-              </div>
-              <span className="text-[10px] bg-cyan-500/20 text-cyan-300 font-bold px-2 py-0.5 rounded">
-                AquaTech IoT
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 my-2">
-              <div className="bg-[#1F232B] p-2.5 rounded-lg border border-[#2B303C]">
-                <span className="text-[10px] text-[#9CA3AF] block">Pond DO Sensor #04</span>
-                <span className="text-xs font-black text-cyan-300 mt-0.5 block">6.8 mg/L</span>
-                <span className="text-[9px] text-emerald-400">Optimal Aeration</span>
-              </div>
-              <div className="bg-[#1F232B] p-2.5 rounded-lg border border-[#2B303C]">
-                <span className="text-[10px] text-[#9CA3AF] block">Daily Prawn Count</span>
-                <span className="text-xs font-black text-[#B8F36B] mt-0.5 block">100 Count Rates</span>
-                <span className="text-[9px] text-cyan-200">Bhimavaram Market</span>
-              </div>
-            </div>
-            <div className="bg-cyan-950/60 border border-cyan-800/40 rounded p-2 flex items-center justify-between text-[10px] text-cyan-200">
-              <span>Smart Aquaculture Automation</span>
-              <span className="font-bold text-[#B8F36B]">Farmer Connect</span>
-            </div>
-          </div>
-        );
 
       case "rare-drafts":
         return (

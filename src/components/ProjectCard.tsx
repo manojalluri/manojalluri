@@ -6,12 +6,16 @@ interface ProjectCardProps {
   project: ProjectItem;
   onOpenInquiry: (projectName: string) => void;
   onViewDetails: (project: ProjectItem) => void;
+  layoutMode?: "grid" | "slider";
+  index?: number;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   onOpenInquiry,
   onViewDetails,
+  layoutMode = "slider",
+  index,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -260,17 +264,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-[285px] sm:w-[350px] md:w-[390px] shrink-0 bg-[#181B22] border border-[#272B35] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-[#B8F36B] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+      className={`${
+        layoutMode === "grid"
+          ? "w-full h-full"
+          : "w-[285px] sm:w-[350px] md:w-[390px] shrink-0"
+      } bg-[#181B22] border border-[#272B35] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-[#B8F36B] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group`}
     >
       <div>
         {/* Realistic Browser Frame Header */}
         <div className="bg-[#111318] px-4 py-2.5 border-b border-[#272B35] flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+            </div>
+            {index !== undefined && (
+              <span className="text-[10px] font-mono font-bold text-[#111318] bg-[#B8F36B] px-1.5 py-0.5 rounded">
+                #{String(index + 1).padStart(2, "0")}
+              </span>
+            )}
           </div>
-          <span className="text-[11px] font-mono text-[#9CA3AF] truncate max-w-[200px]">
+          <span className="text-[11px] font-mono text-[#9CA3AF] truncate max-w-[170px] sm:max-w-[200px]">
             {project.liveUrl ? new URL(project.liveUrl).hostname : `${project.id}.com`}
           </span>
           <span className="text-[10px] font-bold text-[#B8F36B] uppercase tracking-wider flex items-center gap-1">

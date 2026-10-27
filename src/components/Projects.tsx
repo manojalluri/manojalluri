@@ -1,5 +1,16 @@
-import React, { useState } from "react";
-import { Sparkles, ArrowUpRight, X, ExternalLink, Play, Pause } from "lucide-react";
+import React, { useState, useRef } from "react";
+import {
+  Sparkles,
+  ArrowUpRight,
+  X,
+  ExternalLink,
+  Play,
+  Pause,
+  LayoutGrid,
+  SlidersHorizontal,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { projectsData } from "../data/projects";
 import { ProjectCard } from "./ProjectCard";
 import type { ProjectItem } from "../types";
@@ -10,97 +21,203 @@ interface ProjectsProps {
 
 export const Projects: React.FC<ProjectsProps> = ({ onOpenContact }) => {
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [viewMode, setViewMode] = useState<"grid" | "slider">("grid");
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scrollSlider = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+    const scrollAmount = 380;
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+
+    if (direction === "left") {
+      setActiveSlideIndex((prev) => Math.max(0, prev - 1));
+    } else {
+      setActiveSlideIndex((prev) => Math.min(projectsData.length - 1, prev + 1));
+    }
+  };
+
+  const scrollToProject = (index: number) => {
+    if (!sliderRef.current) return;
+    const cardWidth = 380;
+    sliderRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+    setActiveSlideIndex(index);
+  };
 
   return (
     <section id="work" className="py-20 md:py-28 bg-[#111318] text-white relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F232B] border border-[#2B303C] text-xs font-bold uppercase tracking-wider text-[#B8F36B] mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>SELECTED PROJECTS</span>
+              <span>SELECTED PROJECTS ({projectsData.length} LIVE SITES)</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.15] mb-4">
-              Good Ideas Deserve Great Execution.
+              Real Projects. Built for Real Customers.
             </h2>
             <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed">
-              A selection of live web experiences and digital products demonstrating my approach to design,
-              development, usability, and conversion performance.
+              Explore 7 live websites and web applications I've designed and launched.
+              Every project is organized in order and comfortable to explore with live links.
             </p>
           </div>
 
-          {/* Interactive Pause/Play Toggle & Hover Hint */}
-          <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#181B22] border border-[#272B35] text-xs text-[#9CA3AF]">
-              <span className="w-2 h-2 rounded-full bg-[#86D42A] animate-pulse"></span>
-              <span>Hover card to pause</span>
+          {/* Comfortable Viewing Controls */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            {/* View Mode Toggle: Grid vs Slider */}
+            <div className="inline-flex p-1 bg-[#181B22] border border-[#272B35] rounded-xl">
+              <button
+                onClick={() => setViewMode("grid")}
+                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  viewMode === "grid"
+                    ? "bg-[#B8F36B] text-[#111318] shadow-xs"
+                    : "text-[#9CA3AF] hover:text-white"
+                }`}
+                title="Comfortable Grid View"
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Grid View</span>
+              </button>
+              <button
+                onClick={() => setViewMode("slider")}
+                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  viewMode === "slider"
+                    ? "bg-[#B8F36B] text-[#111318] shadow-xs"
+                    : "text-[#9CA3AF] hover:text-white"
+                }`}
+                title="Horizontal Slider View"
+              >
+                <SlidersHorizontal className="w-3.5 h-3.5" />
+                <span>Horizontal Slider</span>
+              </button>
             </div>
-            <button
-              onClick={() => setIsPaused(!isPaused)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1F232B] hover:bg-[#2B303C] text-xs font-bold text-white border border-[#2B303C] transition-all cursor-pointer"
-              aria-label={isPaused ? "Resume movement" : "Pause movement"}
-            >
-              {isPaused ? (
-                <>
-                  <Play className="w-3.5 h-3.5 text-[#B8F36B] fill-current" />
-                  <span>Resume Stream</span>
-                </>
-              ) : (
-                <>
-                  <Pause className="w-3.5 h-3.5 text-[#B8F36B] fill-current" />
-                  <span>Pause Stream</span>
-                </>
-              )}
-            </button>
+
+            {/* In Slider Mode: Show Left/Right Navigation and Auto-scroll controls */}
+            {viewMode === "slider" && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => scrollSlider("left")}
+                  aria-label="Previous Project"
+                  className="p-2.5 rounded-xl bg-[#1F232B] hover:bg-[#2B303C] text-white border border-[#2B303C] transition-colors cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => scrollSlider("right")}
+                  aria-label="Next Project"
+                  className="p-2.5 rounded-xl bg-[#1F232B] hover:bg-[#2B303C] text-white border border-[#2B303C] transition-colors cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setIsAutoScrolling(!isAutoScrolling)}
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#1F232B] hover:bg-[#2B303C] text-xs font-bold text-white border border-[#2B303C] transition-all cursor-pointer"
+                >
+                  {isAutoScrolling ? (
+                    <>
+                      <Pause className="w-3 h-3 text-[#B8F36B] fill-current" />
+                      <span>Pause Auto</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play className="w-3 h-3 text-[#B8F36B] fill-current" />
+                      <span>Auto Slide</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
           </div>
         </div>
+
+        {/* VIEW 1: COMFORTABLE RESPONSIVE GRID (DEFAULT & HIGHLY READABLE) */}
+        {viewMode === "grid" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {projectsData.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                layoutMode="grid"
+                index={idx}
+                onOpenInquiry={(title) => onOpenContact(`Inquiry regarding ${title}`)}
+                onViewDetails={(item) => setActiveModalProject(item)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Horizontal Moving Stream Container (Left to Right) */}
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Left & Right Elegant Edge Gradient Masks */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#111318] via-[#111318]/80 to-transparent z-10"></div>
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#111318] via-[#111318]/80 to-transparent z-10"></div>
+      {/* VIEW 2: HORIZONTAL SLIDER VIEW (WITH COMFORTABLE ARROWS & PAGINATION) */}
+      {viewMode === "slider" && (
+        <div className="relative w-full overflow-hidden py-4">
+          {/* Left & Right Edge Gradient Masks */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-[#111318] via-[#111318]/70 to-transparent z-10"></div>
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-[#111318] via-[#111318]/70 to-transparent z-10"></div>
 
-        {/* Continuous Left-to-Right Animated Carousel */}
-        <div
-          className={`animate-marquee-ltr flex gap-6 sm:gap-8 px-4 ${
-            isPaused ? "marquee-paused" : ""
-          }`}
-          style={{
-            animationPlayState: isPaused ? "paused" : undefined,
-          }}
-        >
-          {/* Render duplicated list so the loop is seamless and never runs out */}
-          {[...projectsData, ...projectsData].map((project, idx) => (
-            <ProjectCard
-              key={`${project.id}-${idx}`}
-              project={project}
-              onOpenInquiry={(title) => onOpenContact(`Inquiry regarding ${title}`)}
-              onViewDetails={(item) => setActiveModalProject(item)}
-            />
-          ))}
+          {/* Slider Container */}
+          <div
+            ref={sliderRef}
+            className={`flex gap-6 sm:gap-8 px-4 sm:px-8 overflow-x-auto no-scrollbar scroll-smooth ${
+              isAutoScrolling ? "animate-marquee-ltr" : ""
+            }`}
+          >
+            {projectsData.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                layoutMode="slider"
+                index={idx}
+                onOpenInquiry={(title) => onOpenContact(`Inquiry regarding ${title}`)}
+                onViewDetails={(item) => setActiveModalProject(item)}
+              />
+            ))}
+          </div>
+
+          {/* Quick Pagination Dots Below Slider */}
+          <div className="flex items-center justify-center gap-2 mt-6">
+            {projectsData.map((proj, idx) => (
+              <button
+                key={proj.id}
+                onClick={() => scrollToProject(idx)}
+                aria-label={`Go to project ${idx + 1}`}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  activeSlideIndex === idx
+                    ? "w-8 bg-[#B8F36B]"
+                    : "w-2 bg-[#272B35] hover:bg-[#656B76]"
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Bottom CTA Banner */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="bg-[#181B22] border border-[#272B35] rounded-2xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div className="bg-[#181B22] border border-[#272B35] rounded-2xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
-            <h3 className="text-2xl font-bold text-white tracking-tight">
-              Have an idea for your business or product?
+            <span className="text-xs font-bold text-[#B8F36B] uppercase tracking-wider block mb-1">
+              Need A Website Like One of These?
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Have an idea for your business or store?
             </h3>
-            <p className="text-sm text-[#9CA3AF] mt-1.5 max-w-xl">
-              Whether you need an e-commerce storefront, a high-converting landing page, or a tailored web app, let's explore how to make it happen.
+            <p className="text-xs sm:text-sm text-[#9CA3AF] mt-1.5 max-w-xl">
+              Whether you need an online store, a customer portal, an appointment booking system, or a clean company website, let's build it together.
             </p>
           </div>
           <button
             onClick={() => onOpenContact("Custom Project Discussion")}
-            className="shrink-0 inline-flex items-center gap-2 bg-[#B8F36B] hover:bg-[#A3E94E] text-[#111318] font-extrabold text-xs uppercase tracking-wider px-7 py-4 rounded-full transition-all cursor-pointer shadow-lg hover:scale-105"
+            className="shrink-0 inline-flex items-center gap-2 bg-[#B8F36B] hover:bg-[#A3E94E] text-[#111318] font-black text-xs uppercase tracking-wider px-7 py-4 rounded-full transition-all cursor-pointer shadow-lg hover:scale-105"
           >
-            <span>Discuss a Similar Project</span>
+            <span>Discuss Your Project</span>
             <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
           </button>
         </div>
@@ -131,10 +248,10 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenContact }) => {
               </p>
             </div>
 
-            {/* Architectural Highlights */}
+            {/* Implementation Highlights */}
             <div className="my-6 p-4 rounded-xl bg-[#111318] border border-[#272B35]">
               <span className="text-xs font-bold text-white uppercase tracking-wider block mb-2">
-                Implementation Focus:
+                Key Features Built:
               </span>
               <p className="text-xs text-[#E5E7EB] leading-relaxed">
                 {activeModalProject.highlight}

@@ -12,18 +12,18 @@ export const Skills: React.FC = () => {
         <div className="max-w-3xl mb-14 sm:mb-18">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7F8FA] border border-[#E5E7EB] text-xs font-bold uppercase tracking-wider text-[#111318] mb-4 shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-[#86D42A]" />
-            <span>ENTERPRISE TECH STACK</span>
+            <span>MY TECH STACK</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111318] leading-[1.15] mb-4">
-            Enterprise-Grade Architecture. Built for Scale.
+            Modern Tools. Fast &amp; Reliable.
           </h2>
           <p className="text-base sm:text-lg text-[#656B76] leading-relaxed">
-            I engineer web applications and digital products using battle-tested enterprise technologies,
-            strict type safety, ACID-compliant databases, and automated cloud pipelines designed to handle real business volume.
+            I build fast, secure websites and web apps using clean, modern technologies.
+            Everything is chosen to make sure your site loads instantly and runs smoothly on all devices.
           </p>
         </div>
 
-        {/* 3 Enterprise Categories Grid */}
+        {/* 3 Categories Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((cat, idx) => {
             const Icon = categoryIcons[idx] || Layers;
@@ -44,7 +44,7 @@ export const Skills: React.FC = () => {
                           {cat.title}
                         </h3>
                         <span className="text-[11px] text-[#86D42A] font-bold uppercase tracking-wider">
-                          Enterprise Ready
+                          Fast &amp; Modern
                         </span>
                       </div>
                     </div>
@@ -77,8 +77,8 @@ export const Skills: React.FC = () => {
 
                 {/* Card footer indicator */}
                 <div className="mt-6 pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-[11px] text-[#656B76]">
-                  <span className="font-semibold">Performance Standard</span>
-                  <span className="font-mono text-[#111318] font-bold">100% Type-Safe</span>
+                  <span className="font-semibold">Quality Standard</span>
+                  <span className="font-mono text-[#111318] font-bold">Fast &amp; Secure</span>
                 </div>
               </div>
             );

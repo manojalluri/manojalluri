@@ -4,13 +4,13 @@ export const siteConfig = {
   title: "Independent Web Developer & Digital Solutions Partner",
   role: "Full-Stack Web Developer",
   location: "India (Serving Clients Worldwide)",
-  status: "Available for Select Projects",
+  status: "Available for New Projects",
   tagline: "Websites That Make Your Business Stand Out.",
   heroEyebrow: "INDEPENDENT WEB DEVELOPER · INDIA",
   description:
-    "I help startups, entrepreneurs, and growing businesses turn their ideas into modern digital experiences through thoughtful design and high-quality web development.",
+    "I help businesses, startups, and shop owners build fast, clean websites that look great on phones and turn visitors into customers.",
   supportingDescription:
-    "I design and develop modern, responsive, and high-performing websites that help businesses build credibility, showcase their value, and grow online.",
+    "I build clean, modern, and mobile-friendly websites that help your business build trust and get more clients online.",
   
   contact: {
     email: "manojalluri.dev@gmail.com",

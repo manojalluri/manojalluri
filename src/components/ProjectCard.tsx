@@ -260,7 +260,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="w-[340px] sm:w-[400px] shrink-0 bg-[#181B22] border border-[#272B35] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-[#B8F36B] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
+      className="w-[285px] sm:w-[350px] md:w-[390px] shrink-0 bg-[#181B22] border border-[#272B35] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-[#B8F36B] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
     >
       <div>
         {/* Realistic Browser Frame Header */}
@@ -344,7 +344,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Card Action footer */}
-      <div className="px-6 pb-6 pt-2 border-t border-[#272B35] flex items-center justify-between gap-2">
+      <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-[#272B35] flex items-center justify-between gap-2">
         {project.liveUrl ? (
           <a
             href={project.liveUrl}
@@ -352,7 +352,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             className="text-xs font-extrabold text-[#B8F36B] hover:text-white transition-colors flex items-center gap-1"
           >
-            <span>Live Website</span>
+            <span>Visit Live Site</span>
             <ExternalLink className="w-3.5 h-3.5 stroke-[2.5]" />
           </a>
         ) : (
@@ -360,16 +360,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             onClick={() => onViewDetails(project)}
             className="text-xs font-bold text-[#E5E7EB] hover:text-[#B8F36B] transition-colors flex items-center gap-1 cursor-pointer"
           >
-            <span>View Architecture</span>
+            <span>View Details</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         )}
 
         <button
           onClick={() => onOpenInquiry(project.title)}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#222631] hover:bg-[#B8F36B] hover:text-[#111318] text-[#E5E7EB] text-xs font-bold tracking-wide uppercase transition-all cursor-pointer border border-[#2F3543]"
+          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#222631] hover:bg-[#B8F36B] hover:text-[#111318] text-[#E5E7EB] text-[11px] font-bold tracking-wide uppercase transition-all cursor-pointer border border-[#2F3543]"
         >
-          <span>Discuss Similar</span>
+          <span>Ask About This</span>
         </button>
       </div>
     </div>

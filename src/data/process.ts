@@ -3,50 +3,50 @@ import type { ProcessStep } from "../types";
 export const processSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Discovery & Strategy",
+    title: "Understand Your Goals",
     description:
-      "We begin by understanding your business, primary goals, target audience, required features, competitor landscape, and exact project scope.",
+      "We discuss your business, the type of website you need, and the features that will help you win more customers.",
     deliverables: [
-      "Requirements & scope document",
-      "Sitemap & content architecture",
-      "Design reference alignment",
-      "Timeline & milestone plan",
+      "Clear list of website pages & features",
+      "Exact timeline and delivery date",
+      "Agreement on design styles and references",
+      "Fixed, transparent pricing quote",
     ],
   },
   {
     number: "02",
-    title: "Design & UX Architecture",
+    title: "Design the Look & Feel",
     description:
-      "Crafting the visual direction, typography, responsive wireframes, component layouts, and high-fidelity prototypes tailored to your brand identity.",
+      "I create clean, modern visual designs so you can see exactly how your site will look on phones and laptops before coding.",
     deliverables: [
-      "Wireframes & layout hierarchy",
-      "Design system & color tokens",
-      "Mobile & desktop screen designs",
-      "Review & refinement cycle",
+      "Mobile and desktop layout previews",
+      "Color palette and font selection",
+      "Clear text and button placements",
+      "Review and adjustments based on your feedback",
     ],
   },
   {
     number: "03",
-    title: "Modern Development",
+    title: "Build the Website",
     description:
-      "Building the website with clean, modular code, modern React & TypeScript, responsive layouts, fast load speeds, and seamless interactions.",
+      "I write fast, clean code to turn the design into a fully functioning website with working forms and smooth animations.",
     deliverables: [
-      "Modular, reusable frontend code",
-      "Mobile-first responsive styling",
-      "Form validations & integrations",
-      "Cross-browser compatibility testing",
+      "Built with modern React and TypeScript",
+      "Works perfectly on iPhones, Androids, and laptops",
+      "Working inquiry forms & WhatsApp chat",
+      "Tested on Chrome, Safari, and Firefox",
     ],
   },
   {
     number: "04",
-    title: "Launch & Structured Handover",
+    title: "Launch & Handover",
     description:
-      "Conducting pre-launch QA, domain/DNS connection, production deployment on Vercel, and delivering full source code with a walk-through.",
+      "I connect your domain name, launch the site live on the internet, and hand over full ownership and control to you.",
     deliverables: [
-      "Core Web Vitals & speed audit",
-      "Production deployment & SSL setup",
-      "Source code repository handover",
-      "Post-launch support & guidance",
+      "Live website with free SSL lock security",
+      "Fast global loading speeds",
+      "Complete code and login details handover",
+      "30 days of free support after launch",
     ],
   },
 ];

@@ -4,61 +4,61 @@ export const faqsData: FAQItem[] = [
   {
     question: "What types of websites do you build?",
     answer:
-      "I specialize in custom business websites, high-converting landing pages, e-commerce storefronts, portfolio platforms, and bespoke web applications. Every project is built from the ground up to match your brand's unique goals, target audience, and business requirements.",
+      "I build business websites, product landing pages, online e-commerce stores, personal portfolios, and custom web dashboards. Every website is built from scratch to match your specific business goals.",
     category: "Services",
   },
   {
     question: "How much does a website cost?",
     answer:
-      "Project costs depend directly on the scope, number of pages, custom features, and third-party integrations needed. A focused single-page landing page typically starts at a lower tier, while multi-page corporate websites or full e-commerce platforms with custom catalogs and payment systems are priced accordingly. In the inquiry form below, you can select your estimated budget range, and I will tailor a transparent, milestone-based proposal.",
+      "The price depends on the number of pages, custom features, and tools you need. A simple one-page landing page costs less, while a full online store or multi-page company website with custom forms takes more time. You can select your budget in the inquiry form below, and I will share a clear, transparent quote.",
     category: "Pricing",
   },
   {
-    question: "How long does development take?",
+    question: "How long does it take to build a website?",
     answer:
-      "A focused landing page or portfolio can typically be completed in 1 to 2 weeks. A comprehensive business website usually requires 2 to 4 weeks, while complex web applications with authentication and database workflows take 4 to 8 weeks. We establish clear milestone delivery dates during our initial discovery stage.",
+      "A focused landing page or portfolio usually takes 1 to 2 weeks. A complete multi-page business website takes 2 to 4 weeks. Before starting, we agree on an exact completion date so you always know when your site will be ready.",
     category: "Timeline",
   },
   {
-    question: "Will the website work on mobile?",
+    question: "Will my website work properly on mobile phones?",
     answer:
-      "Yes, 100%. Every website I build is mobile-first and thoroughly tested across smartphones (320px, 375px, 414px), tablets (768px, 1024px), laptops, and large desktop screens. Responsive touch targets, fluid typography, and optimized asset loading ensure a flawless user experience across all devices.",
+      "Yes, 100%. More than 70% of web traffic in India comes from mobile phones. I test every website on iPhones, Android smartphones, tablets, and laptops to ensure smooth scrolling, easy-to-read text, and quick-loading pages.",
     category: "Technical",
   },
   {
     question: "Can you redesign my existing website?",
     answer:
-      "Absolutely. If your current website feels dated, loads slowly, or doesn't convert visitors, I can perform a full redesign. This includes auditing your existing content, modernizing the visual UI/UX, rebuilding with clean React/Tailwind code, and optimizing mobile responsiveness.",
+      "Yes. If your current website looks old, loads slowly, or is difficult to use on mobile phones, I can redesign it completely to look modern, load faster, and bring you more customers.",
     category: "Services",
   },
   {
-    question: "Can you integrate payment gateways?",
+    question: "Can you add online payment options?",
     answer:
-      "Yes. I integrate standard, secure payment gateways such as Razorpay, Cashfree, and Stripe, supporting UPI, credit/debit cards, net banking, and digital wallets with instant webhook confirmations.",
+      "Yes. I can integrate safe Indian and international payment gateways like Razorpay, Cashfree, or Stripe so your customers can pay via UPI (Google Pay, PhonePe, Paytm), credit/debit cards, and NetBanking.",
     category: "Technical",
   },
   {
-    question: "Can I update the website after launch?",
+    question: "Can I update text and images after the site is launched?",
     answer:
-      "Yes. Depending on your preference, websites can be built with structured configuration files, CMS integration, or headless databases (like Supabase or Sanity) that allow you or your team to easily update copy, products, blog posts, and media without touching code.",
+      "Yes. I can set up your website with a simple dashboard or easy-to-edit file so you can update text, add new photos, or change prices whenever you want without needing to know any code.",
     category: "Management",
   },
   {
-    question: "Do you help with domain and hosting setup?",
+    question: "Do you help with domain name and hosting setup?",
     answer:
-      "Yes. I guide you through purchasing or connecting your custom domain (GoDaddy, Namecheap, Google Domains) and deploy your website to industry-leading edge hosting (such as Vercel) with free automatic SSL certificates, fast global CDN caching, and continuous deployment.",
+      "Yes. I will help you connect your domain name (like yourcompany.com) from GoDaddy or Namecheap and host the website on fast cloud servers (Vercel) with free SSL security (https://).",
     category: "Hosting",
   },
   {
-    question: "Do you provide maintenance?",
+    question: "Do you provide support after the website goes live?",
     answer:
-      "Yes. Every completed project includes a 30-day post-launch support window for bug fixes and adjustments. After launch, ongoing maintenance packages are available if you need recurring feature updates, backups, performance monitoring, or content refreshes.",
+      "Yes. Every project comes with 30 days of free post-launch support for any minor tweaks, questions, or bug fixes. If you need monthly updates afterwards, maintenance plans are also available.",
     category: "Support",
   },
   {
-    question: "How can I start a project?",
+    question: "How do I get started?",
     answer:
-      "The easiest way is to fill out the Project Inquiry form at the bottom of this page or reach out directly on WhatsApp or Email. We will arrange a short discussion to understand your needs, after which I will provide a detailed scope breakdown, timeline, and quote.",
+      "Simply fill out the inquiry form at the bottom of this page with a few details about your project. I will review it and reply within 24 hours with ideas, timeline, and an honest quote.",
     category: "Getting Started",
   },
 ];

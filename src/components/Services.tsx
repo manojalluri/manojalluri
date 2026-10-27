@@ -20,9 +20,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111318] leading-[1.15] mb-4">
             Everything Your Business Needs to Grow Online.
           </h2>
-          <p className="text-base sm:text-lg text-[#656B76] leading-relaxed">
-            From a professional first impression to a complete digital product, I build web
-            experiences centered directly around your business goals, target audience, and conversion metrics.
+          <p className="text-sm sm:text-base md:text-lg text-[#656B76] leading-relaxed">
+            From your company's first website to an online store or custom web tool,
+            I build websites designed to help your business get noticed and gain more clients.
           </p>
         </div>
 
@@ -40,18 +40,18 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         {/* Bottom Banner callout */}
         <div className="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div>
-            <h4 className="text-lg font-bold text-[#111318]">
-              Need a custom solution outside these packages?
+            <h4 className="text-base sm:text-lg font-bold text-[#111318]">
+              Have a special requirement or unique project?
             </h4>
             <p className="text-xs sm:text-sm text-[#656B76] mt-1">
-              Have specific API workflows, multi-step portals, or specialized web requirements? Let's discuss a tailored build.
+              Have specific features or ideas not listed above? Let's discuss a customized solution.
             </p>
           </div>
           <button
             onClick={() => onSelectService("Other")}
-            className="shrink-0 inline-flex items-center gap-2 bg-[#111318] hover:bg-[#20242D] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all cursor-pointer shadow-xs"
+            className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 bg-[#111318] hover:bg-[#20242D] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all cursor-pointer shadow-xs"
           >
-            <span>Request Custom Scope</span>
+            <span>Discuss Custom Project</span>
             <ArrowUpRight className="w-4 h-4 text-[#B8F36B]" />
           </button>
         </div>

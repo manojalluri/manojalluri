@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Bold Oversized Hero Typography */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#111318] leading-[1.08] mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#111318] leading-[1.12] mb-5">
             Websites That Make Your Business{" "}
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10 px-2 py-0.5 rounded-xl bg-[#B8F36B] text-[#111318]">
@@ -54,15 +54,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           </h1>
 
           {/* Concise Supporting Description */}
-          <p className="text-base sm:text-lg md:text-xl text-[#656B76] leading-relaxed max-w-2xl mx-auto mb-10 font-normal">
+          <p className="text-sm sm:text-base md:text-lg text-[#656B76] leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
             {siteConfig.description}
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <button
               onClick={onOpenContact}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111318] hover:bg-[#20242D] text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-xl hover:scale-[1.02] cursor-pointer group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111318] hover:bg-[#20242D] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-all duration-200 shadow-md hover:shadow-xl hover:scale-[1.02] cursor-pointer group"
             >
               <span>Start Your Project</span>
               <span className="w-7 h-7 rounded-full bg-[#B8F36B] text-[#111318] flex items-center justify-center group-hover:rotate-45 transition-transform duration-200">
@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <a
               href="#work"
               onClick={scrollToWork}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFFFFF] hover:bg-[#EEF0F3] text-[#111318] font-bold text-sm sm:text-base px-7 py-4 rounded-full border border-[#E5E7EB] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFFFFF] hover:bg-[#EEF0F3] text-[#111318] font-bold text-sm sm:text-base px-6 py-3.5 rounded-full border border-[#E5E7EB] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
             >
               <span>View Selected Work</span>
               <ArrowDown className="w-4 h-4 text-[#656B76]" />
@@ -81,18 +81,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Micro Trust Pills */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-[#656B76] font-medium">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-y-2 gap-x-5 text-xs text-[#656B76] font-medium">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#86D42A]" />
-              100% Custom Code (No generic templates)
+              Custom Built (No cheap templates)
             </span>
             <span className="flex items-center gap-1.5">
               <Zap className="w-4 h-4 text-[#86D42A]" />
-              Mobile First &amp; SEO Optimized
+              Fast &amp; Mobile-Friendly
             </span>
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#86D42A]" />
-              Direct Communication with Developer
+              Talk Directly with the Developer
             </span>
           </div>
         </div>

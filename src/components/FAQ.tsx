@@ -22,14 +22,13 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenContact }) => {
             <div className="sticky top-28">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7F8FA] border border-[#E5E7EB] text-xs font-bold uppercase tracking-wider text-[#111318] mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-[#86D42A]" />
-                <span>FREQUENTLY ASKED QUESTIONS</span>
+                <span>COMMON QUESTIONS</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111318] leading-[1.15] mb-4">
-                Questions Before We Start?
+                Got Questions? I've Got Answers.
               </h2>
               <p className="text-base sm:text-lg text-[#656B76] leading-relaxed mb-8">
-                Clear answers regarding project costs, development timelines, mobile responsiveness,
-                hosting, and after-launch maintenance.
+                Quick and simple answers about project pricing, timelines, mobile phones, and how we will work together.
               </p>
 
               {/* Direct Question Callout */}
@@ -41,14 +40,14 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenContact }) => {
                   <h4 className="text-sm font-bold text-[#111318]">Have a different question?</h4>
                 </div>
                 <p className="text-xs text-[#656B76] leading-relaxed mb-4">
-                  If your question isn't answered here, feel free to drop a quick message on WhatsApp or through the project inquiry form.
+                  Feel free to send me a quick WhatsApp message or fill out the form below. I'm always happy to help.
                 </p>
                 <button
                   onClick={onOpenContact}
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#111318] hover:bg-[#20242D] text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition-all cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-[#B8F36B]" />
-                  <span>Ask Me Directly ↗</span>
+                  <span>Ask Me on WhatsApp / Form ↗</span>
                 </button>
               </div>
             </div>

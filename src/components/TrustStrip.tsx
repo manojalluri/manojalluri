@@ -11,12 +11,12 @@ import {
 
 export const TrustStrip: React.FC = () => {
   const capabilities = [
-    { label: "Business Websites", icon: Globe, highlight: "Corporate & Agency" },
-    { label: "High-Converting Landing Pages", icon: Layout, highlight: "SaaS & Launches" },
-    { label: "E-commerce Solutions", icon: ShoppingBag, highlight: "D2C & Catalog" },
-    { label: "Custom Web Applications", icon: Code2, highlight: "Dashboards & Workflows" },
-    { label: "Mobile-First Responsive Design", icon: Smartphone, highlight: "100% Cross-Device" },
-    { label: "Core Web Vitals & SEO", icon: Gauge, highlight: "High Speed Performance" },
+    { label: "Business Websites", icon: Globe },
+    { label: "Landing Pages", icon: Layout },
+    { label: "Online Stores", icon: ShoppingBag },
+    { label: "Custom Web Apps", icon: Code2 },
+    { label: "Mobile-Friendly Design", icon: Smartphone },
+    { label: "Fast Page Speeds", icon: Gauge },
   ];
 
   return (

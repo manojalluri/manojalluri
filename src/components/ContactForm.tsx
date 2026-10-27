@@ -444,8 +444,8 @@ Details: ${formData.message || "I'd like to discuss a project."}`;
                       1
                     </span>
                     <div>
-                      <strong className="text-white block font-semibold">Scope &amp; Requirements Review</strong>
-                      <span>I carefully examine your goals, feature wishlist, and target timeline.</span>
+                      <strong className="text-white block font-semibold">I Review Your Requirements</strong>
+                      <span>I carefully read your message and understand what you want to build.</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -453,8 +453,8 @@ Details: ${formData.message || "I'd like to discuss a project."}`;
                       2
                     </span>
                     <div>
-                      <strong className="text-white block font-semibold">Detailed Proposal &amp; Estimate</strong>
-                      <span>You receive a transparent milestone breakdown, architecture plan, and fixed quote.</span>
+                      <strong className="text-white block font-semibold">Clear Plan &amp; Honest Price</strong>
+                      <span>I send you a simple plan with fixed cost and expected delivery date.</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -462,8 +462,8 @@ Details: ${formData.message || "I'd like to discuss a project."}`;
                       3
                     </span>
                     <div>
-                      <strong className="text-white block font-semibold">Discovery &amp; Kickoff</strong>
-                      <span>We align on wireframes and start turning your vision into production reality.</span>
+                      <strong className="text-white block font-semibold">We Build &amp; Launch</strong>
+                      <span>We start work right away, with direct updates on WhatsApp until your site is live.</span>
                     </div>
                   </div>
                 </div>
@@ -476,28 +476,27 @@ Details: ${formData.message || "I'd like to discuss a project."}`;
                 </div>
                 <div>
                   <span className="text-[11px] font-bold text-[#9CA3AF] uppercase tracking-wider block">
-                    Location &amp; Delivery
+                    Location &amp; Work
                   </span>
                   <span className="text-sm font-bold text-white block">
                     {siteConfig.location}
                   </span>
                   <span className="text-xs text-[#86D42A] font-semibold mt-0.5 block flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#86D42A] animate-ping"></span>
-                    Currently accepting projects for this month
+                    Available for new projects this month
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Response Time Guarantee Banner */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-[#1C2028] to-[#14161D] border border-[#2B303C]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#1C2028] to-[#14161D] border border-[#2B303C]">
               <div className="flex items-center gap-2 text-xs font-bold text-[#B8F36B] uppercase tracking-wider mb-2">
                 <Clock className="w-4 h-4" />
-                <span>Response Time Commitment</span>
+                <span>Fast Reply Guaranteed</span>
               </div>
               <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                I respect your time. Every inquiry sent through this form receives a thoughtful response
-                with initial thoughts, project scoping questions, and estimated timeline within 24 hours.
+                I respect your time. I will reply within 24 hours with honest advice, realistic timelines, and clear next steps.
               </p>
             </div>
           </div>

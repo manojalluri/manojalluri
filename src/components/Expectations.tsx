@@ -4,23 +4,23 @@ import { Sparkles, Clock, ShieldCheck, FileCode, Headphones } from "lucide-react
 export const Expectations: React.FC = () => {
   const commitments = [
     {
-      title: "Predictable Turnaround Times",
-      desc: "We establish realistic delivery dates during discovery and honor them. Progress updates keep you informed at every milestone.",
+      title: "On-Time Delivery",
+      desc: "We set realistic dates together and stick to them. You get regular updates so you always know where your project stands.",
       icon: Clock,
     },
     {
-      title: "Rigorous Pre-Launch QA",
-      desc: "Every page is tested on real iOS and Android devices, as well as Chrome, Safari, and Firefox, to guarantee responsive fidelity.",
+      title: "Tested on Real Phones",
+      desc: "I test your website on iPhones, Android phones, tablets, and laptops before launch so everything works seamlessly.",
       icon: ShieldCheck,
     },
     {
-      title: "Complete Code Ownership",
-      desc: "You own 100% of the code, domain records, and assets. Everything is delivered in a clean Git repository with setup documentation.",
+      title: "You Own Everything",
+      desc: "All code, graphics, accounts, and files belong 100% to you. No hidden conditions or vendor lock-in.",
       icon: FileCode,
     },
     {
-      title: "30-Day Post-Launch Warranty",
-      desc: "Once your site is live, I provide 30 days of complimentary support to fix any edge cases and answer technical questions.",
+      title: "30 Days Free Help",
+      desc: "After your site goes live, I provide 30 days of free support to answer questions and make sure you are 100% happy.",
       icon: Headphones,
     },
   ];
@@ -31,18 +31,17 @@ export const Expectations: React.FC = () => {
         <div className="max-w-3xl mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-xs font-bold uppercase tracking-wider text-[#111318] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#86D42A]" />
-            <span>STANDARDS &amp; PROMISES</span>
+            <span>MY PROMISES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#111318] leading-[1.15] mb-4">
-            What You Can Always Expect.
+            Simple Promises I Keep on Every Project.
           </h2>
           <p className="text-base sm:text-lg text-[#656B76] leading-relaxed">
-            Trust is built on clear commitments. Here is the operational standard I bring to every
-            client partnership from start to finish.
+            No guesswork, no surprises. Here is exactly what you can expect when we work together from start to finish.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {commitments.map((item, idx) => {
             const Icon = item.icon;
             return (
